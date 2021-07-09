@@ -1,11 +1,8 @@
 import React, { memo } from "react";
-import useToast from "./useToast" ;
 
 
 const Toast = memo(({header, content, closeToast, ...props})=>{
-  console.log(props);
-  const myToast = useToast();
-  console.log(myToast);
+  console.log(props, closeToast);
   debugger;
     return (
         <div className="toast-cont">

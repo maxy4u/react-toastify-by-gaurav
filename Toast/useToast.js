@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, cloneElement } from 'react';
 import ToastContext from './context';
 
 function useToast() {
@@ -12,7 +12,7 @@ function useToast() {
     dismiss: ifxDismissToast,
     } = useContext(ToastContext);
   return { ifxToast, ifxInfoToast, ifxWarningToast, ifxSuccessToast, ifxErrorToast: (content, options)=>{
-    ifxErrorToast(content, {...options, autoClose: false});
+    ifxErrorToast(cloneElement(content, {type:'Error'}), {...options, autoClose: false});
   }, ifxIsActiveToast, ifxDismissToast };
 }
 
