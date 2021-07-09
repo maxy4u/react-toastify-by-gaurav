@@ -2,8 +2,6 @@ import React, { memo } from "react";
 
 
 const Toast = memo(({header, content, closeToast, ...props})=>{
-  console.log(props, closeToast);
-  debugger;
     return (
         <div className="toast-cont">
             <header>
