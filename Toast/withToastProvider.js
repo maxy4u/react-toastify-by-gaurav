@@ -6,16 +6,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function withToastProvider(Component) {
   function WithToastProvider(props) {
-    const {info, warning, success, error, isActive, dismiss} = toast;
+    const {info, warning, success, error, isActive, dismiss, ...rest} = toast;
     return (
-      <ToastContext.Provider value={{ toast, info, warning, success, error, isActive, dismiss}}>
+      <ToastContext.Provider value={{ toast, info, warning, success, error, isActive, dismiss, ...rest}}>
         <Component {...props} />
         <div className="toasts-wrapper">
           <ToastContainer
             position="top-right"
-            autoClose={5000}
             newestOnTop={false}
-            closeOnClick
+            autoClose={4000}
+            closeButton={false}
             rtl={false}
             draggable
             pauseOnHover

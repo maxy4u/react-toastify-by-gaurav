@@ -1,3 +1,38 @@
 h1, p {
   font-family: Lato;
 }
+
+.toast-cont > header{
+  display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px;
+}
+
+.Toastify__progress-bar--success, .Toastify__toast--success > .Toastify__toast-body > .toast-cont > header {
+  background: #07bc0c;
+}
+.Toastify__progress-bar--warning, .Toastify__toast--warning > .Toastify__toast-body > .toast-cont > header {
+  background: #f1c40f;
+}
+.Toastify__progress-bar--error, .Toastify__toast--error > .Toastify__toast-body > .toast-cont > header {
+  background: #e74c3c;
+}
+.Toastify__progress-bar--default,.Toastify__progress-bar--info, .Toastify__toast--default > .Toastify__toast-body > .toast-cont > header, .Toastify__toast--info > .Toastify__toast-body > .toast-cont > header {
+  background: #3498db;
+}
+
+
+.toast-cont > header > p{
+  margin: 0;
+}
+
+.Toastify__toast{
+  color: black;
+  padding: 0;
+  background: white;
+}
+
+.Toastify__toast-body{
+  height: 90%;
+}

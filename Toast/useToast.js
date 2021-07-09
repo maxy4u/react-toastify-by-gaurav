@@ -11,7 +11,9 @@ function useToast() {
     isActive: ifxIsActiveToast={}, 
     dismiss: ifxDismissToast,
     } = useContext(ToastContext);
-  return { ifxToast, ifxInfoToast, ifxWarningToast, ifxSuccessToast, ifxErrorToast, ifxIsActiveToast, ifxDismissToast };
+  return { ifxToast, ifxInfoToast, ifxWarningToast, ifxSuccessToast, ifxErrorToast: (content, options)=>{
+    ifxErrorToast(content, {...options, autoClose: false});
+  }, ifxIsActiveToast, ifxDismissToast };
 }
 
 export default useToast;
